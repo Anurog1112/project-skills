@@ -8,6 +8,9 @@ PROFILES = ("website", "dashboard", "app")
 
 
 def build():
+    manifest_path = ROOT / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    previous_hashes = {entry["profile"]: entry["sha256"] for entry in manifest.get("profiles", [])}
     common = (ROOT / "skills/professional-web/SKILL.md").read_text(encoding="utf-8")
     quality = (ROOT / "skills/frontend-ui-quality/SKILL.md").read_text(encoding="utf-8")
     output = ROOT / "profiles"
@@ -37,10 +40,16 @@ def build():
                 "skills/frontend-ui-quality/SKILL.md",
             ],
         })
-    manifest_path = ROOT / "manifest.json"
-    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     manifest["release"] = "professional-web-pilot-2"
     manifest["profiles"] = entries
+    current_hashes = {entry["profile"]: entry["sha256"] for entry in entries}
+    if current_hashes != previous_hashes:
+        publication = manifest.setdefault("publication", {})
+        publication["profile_commit"] = None
+        publication["profile_urls"] = {}
+        publication["profiles_anonymous_access_verified"] = False
+        publication.pop("profiles_verified_at", None)
+        manifest["status"] = "PREPARED_PROFILES_BSD_RUNTIME_NOT_TESTED"
     manifest_path.write_bytes((json.dumps(manifest, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
     return entries
 

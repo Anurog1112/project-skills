@@ -2,6 +2,8 @@
 
 สถานะ PROTOCOL PREPARED / RUNTIME NOT TESTED
 
+รุ่น professional-web-pilot-2 ให้เลือกไฟล์พร้อมใช้ Website, Dashboard หรือ App จาก `profiles/` แต่ละไฟล์รวม workflow, template ที่เลือก และ UI checklist แล้ว AI เป็นผู้สร้าง `PROJECT-SKILL.md` ผ่านแชท ทุกรอบให้บันทึก profile และ hash ของไฟล์พร้อมใช้ที่เลือกจาก manifest
+
 ## ข้อมูลที่บันทึกทุกรอบ
 
 ระบบและ URL, project ID ทดสอบ, baseline hash, Raw URL/commit, Skill hash, model ID เท่าที่ตรวจได้, การตั้งค่า/คำแนะนำที่ระบบแนบเพิ่ม, prompt, เวลาเริ่ม/จบ, request/job ID, input หรือ tool trace ที่เข้าถึงได้, diff, ผลอ่านไฟล์กลับ, Preview, Console และผู้ตรวจ
@@ -15,7 +17,7 @@
 | G01 | เปิด Raw URL ที่ชี้ commit จริงแบบไม่มี session GitHub | ได้เนื้อหา Markdown ตาม manifest เก็บสถานะการตอบกลับและ hash |
 | G02 | ให้ BSD AI โหลด URL เดียวกันด้วย prompt SETUP | trace/tool response ยืนยันการได้รับเนื้อหา หากดู trace ไม่ได้ ให้ระบุหลักฐานได้เพียงใด |
 | F01 | ทดลอง New File `.md` ใน UI ที่ใช้สอน | บันทึกผลจริงและ allowlist source เมื่อได้รับสิทธิ์ ผลนี้แยกจาก F02 |
-| F02 | สั่ง AI สร้าง `workshop-ui.SKILL.md` | อ่านไฟล์จาก storage/เส้นทางที่รองรับหลัง reload แล้วเทียบ SHA-256 ของ UTF-8 ที่ normalize CRLF เป็น LF กับ manifest |
+| F02 | สั่ง AI สร้าง `PROJECT-SKILL.md` | อ่านไฟล์จาก storage/เส้นทางที่รองรับหลัง reload แล้วเทียบ SHA-256 ของ UTF-8 ที่ normalize CRLF เป็น LF กับ profile ที่เลือกใน manifest |
 | A01 | อ่าน Skill โดยไม่คัดลอกเนื้อหาลง prompt | ตรวจ input assembly หรือ file-read trace และให้ระบุกฎเฉพาะจากไฟล์ |
 | A01-C | ตรวจบริบทในโปรเจกต์ทดสอบด้วย marker เฉพาะรอบ | ใส่ marker ลงในสำเนา Skill ทดสอบเท่านั้น เก็บค่าแยกจาก prompt ผู้ใช้ ตรวจว่าค่าที่ตอบตรงไฟล์ พร้อม trace ประกอบ ทำเครื่องหมายว่าสำเนานี้ต่างจาก release เดิม |
 | A02 | ใช้ Skill แก้ Wish หนึ่งข้อ | diff ทำตามกฎที่เกี่ยวข้อง พฤติกรรมที่ขอผ่าน ฟังก์ชันเดิมผ่าน และเปิดงานที่บันทึกกลับได้ |
@@ -24,6 +26,9 @@
 | E01 | เปรียบเทียบไม่มี Skill / Explicit / Project-local | สำเนา baseline เดียวกัน งานและ model/settings เดียวกัน แชทใหม่ และตรวจว่าไม่มีเนื้อหา Skill ปนในคำขอควบคุม เก็บรอบแก้/เวลา/ผลผ่านแยกกัน |
 | X01 | URL ผิด, URL Private หรือ URL ส่ง HTML แทน Markdown | ระบบแจ้งปัญหาที่ตรวจได้และเข้าสู่ทางสำรอง โดยไม่อ้างว่าโหลดหรือติดตั้งสำเร็จ |
 | X02 | มี Skill ชื่อเดียวกันแต่เนื้อหาหรือ version ต่าง | ตรวจพบความต่างและเก็บไฟล์เดิมจนผู้ใช้เลือกว่าจะใช้ release ใด |
+| T01 | เลือก Website / Dashboard / App | ตรวจว่าชุดที่โหลดมี workflow กลาง, template ที่เลือกเพียงประเภทเดียว และ UI checklist พร้อม Provenance ครบ |
+| T02 | ปรับ MVP เดิมด้วย template | diff ตรง Wish ฟังก์ชันและข้อมูลเดิมยังอยู่ ใช้แนวทางจัดหน้าเฉพาะส่วนที่เกี่ยวข้อง และตรวจพฤติกรรมจริง |
+| T03 | สร้างงานใหม่ด้วย template | โครงสร้างตรงกับ brief, ปุ่มและฟอร์มหลักทำงาน, HTML เชื่อม CSS/JS ถูก, มือถือ/เดสก์ท็อปใช้ได้ และสถานะข้อมูลแสดงตามจริง |
 | W01 | ให้มือใหม่ใช้ตามใบงานจริง | Demo ≤8 นาที, Setup ≤5 นาที, ปรับหนึ่ง Wish ใน 32 นาที และ Verify/ส่งต่อใน 5 นาที เก็บจำนวนครั้งที่ต้องให้ครูช่วย |
 
 G01 ผ่านยืนยันการเข้าถึงจากฝั่งผู้ตรวจ ส่วน G02 ต้องตรวจเส้นทางที่ BSD AI ใช้เอง การตอบ marker ถูกเป็นหลักฐานของการได้รับเนื้อหา การแยกอ่านผ่าน tool จากการแนบไฟล์ทั้งโปรเจกต์ต้องใช้ trace/input เพิ่ม

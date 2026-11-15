@@ -1,6 +1,6 @@
 {
-  "release": "workshop-pilot-1",
-  "status": "PUBLISHED_SKILL_BSD_RUNTIME_NOT_TESTED",
+  "release": "professional-web-pilot-2",
+  "status": "PUBLISHED_PROFILES_BSD_RUNTIME_NOT_TESTED",
   "source_archive": "bsd-skills-kit-v0.3.zip",
   "skill": {
     "name": "frontend-ui-quality",
@@ -16,21 +16,65 @@
     "standard core report"
   ],
   "bundled_skills": [
+    "professional-web",
     "frontend-ui-quality"
   ],
   "publication": {
-    "repository": "https://github.com/Anurog1112/bsd-workshop-skills",
+    "repository": "https://github.com/Anurog1112/project-skills",
     "commit": "264670596977af70a314572def0bcf49de842ec6",
-    "raw_url": "https://raw.githubusercontent.com/Anurog1112/bsd-workshop-skills/264670596977af70a314572def0bcf49de842ec6/skills/frontend-ui-quality/SKILL.md",
+    "raw_url": "https://raw.githubusercontent.com/Anurog1112/project-skills/264670596977af70a314572def0bcf49de842ec6/skills/frontend-ui-quality/SKILL.md",
     "anonymous_access_verified": true,
     "verified_at": "2026-11-15T11:20:17.940664+00:00",
     "http_status": 200,
-    "download_sha256": "90b14afcaba05877944b66eb324aee94ba76a825a11363955edd2dd124299c85"
+    "download_sha256": "90b14afcaba05877944b66eb324aee94ba76a825a11363955edd2dd124299c85",
+    "profile_commit": "b27cd51e719dab8c2850b11434fea0b481f08da3",
+    "profile_urls": {
+      "website": "https://raw.githubusercontent.com/Anurog1112/project-skills/b27cd51e719dab8c2850b11434fea0b481f08da3/profiles/website.md",
+      "dashboard": "https://raw.githubusercontent.com/Anurog1112/project-skills/b27cd51e719dab8c2850b11434fea0b481f08da3/profiles/dashboard.md",
+      "app": "https://raw.githubusercontent.com/Anurog1112/project-skills/b27cd51e719dab8c2850b11434fea0b481f08da3/profiles/app.md"
+    },
+    "profiles_anonymous_access_verified": true,
+    "profiles_verified_at": "2026-11-15T11:39:27.508003+00:00"
   },
   "bsd_online": {
     "url_fetch": "NOT TESTED",
     "md_roundtrip": "NOT TESTED",
     "instruction_application": "NOT TESTED",
     "native_discovery": "NOT TESTED"
-  }
+  },
+  "profiles": [
+    {
+      "profile": "website",
+      "path": "profiles/website.md",
+      "bytes": 11067,
+      "sha256": "22d8383b93b74c7c9ad8bb676e2b55770dce7f3fbc40f31704a1014ed019aaef",
+      "sources": [
+        "skills/professional-web/SKILL.md",
+        "templates/website.md",
+        "skills/frontend-ui-quality/SKILL.md"
+      ]
+    },
+    {
+      "profile": "dashboard",
+      "path": "profiles/dashboard.md",
+      "bytes": 11088,
+      "sha256": "cfd9fd8180bd32073bd23ba991a2eaf74fd69555a0c10a55c53cc70cb7b22871",
+      "sources": [
+        "skills/professional-web/SKILL.md",
+        "templates/dashboard.md",
+        "skills/frontend-ui-quality/SKILL.md"
+      ]
+    },
+    {
+      "profile": "app",
+      "path": "profiles/app.md",
+      "bytes": 11347,
+      "sha256": "fe5e072f3e52985eeb72d0d91ce6de8beadae3885ac4804a09a070d4752f5678",
+      "sources": [
+        "skills/professional-web/SKILL.md",
+        "templates/app.md",
+        "skills/frontend-ui-quality/SKILL.md"
+      ]
+    }
+  ]
 }
