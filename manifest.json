@@ -1,0 +1,36 @@
+{
+  "release": "workshop-pilot-1",
+  "status": "PUBLISHED_SKILL_BSD_RUNTIME_NOT_TESTED",
+  "source_archive": "bsd-skills-kit-v0.3.zip",
+  "skill": {
+    "name": "frontend-ui-quality",
+    "version": "0.2.0",
+    "path": "skills/frontend-ui-quality/SKILL.md",
+    "bytes": 5238,
+    "sha256": "90b14afcaba05877944b66eb324aee94ba76a825a11363955edd2dd124299c85",
+    "sha256_lf_utf8": "90b14afcaba05877944b66eb324aee94ba76a825a11363955edd2dd124299c85",
+    "copied_without_changes": true
+  },
+  "cross_skill_references": [
+    "testing-and-verification",
+    "standard core report"
+  ],
+  "bundled_skills": [
+    "frontend-ui-quality"
+  ],
+  "publication": {
+    "repository": "https://github.com/Anurog1112/bsd-workshop-skills",
+    "commit": "264670596977af70a314572def0bcf49de842ec6",
+    "raw_url": "https://raw.githubusercontent.com/Anurog1112/bsd-workshop-skills/264670596977af70a314572def0bcf49de842ec6/skills/frontend-ui-quality/SKILL.md",
+    "anonymous_access_verified": true,
+    "verified_at": "2026-11-15T11:20:17.940664+00:00",
+    "http_status": 200,
+    "download_sha256": "90b14afcaba05877944b66eb324aee94ba76a825a11363955edd2dd124299c85"
+  },
+  "bsd_online": {
+    "url_fetch": "NOT TESTED",
+    "md_roundtrip": "NOT TESTED",
+    "instruction_application": "NOT TESTED",
+    "native_discovery": "NOT TESTED"
+  }
+}
